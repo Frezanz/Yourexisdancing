@@ -39,3 +39,11 @@ if(mount&&window.THREE&&canUseWebGL){
 // subtle reveal on scroll
 const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('seen')}),{threshold:.12});$$('.section,.manifesto,.footer').forEach(e=>obs.observe(e));
 })();
+
+
+// Luxury fluid interaction layer
+if(window.matchMedia('(pointer:fine)').matches){
+  const glowTargets=document.querySelectorAll('.principles article,.orbit-card,.update-feature,.timeline article,.modal-card');
+  glowTargets.forEach(el=>el.addEventListener('pointermove',e=>{const r=el.getBoundingClientRect();el.style.setProperty('--mx',((e.clientX-r.left)/r.width*100)+'%');el.style.setProperty('--my',((e.clientY-r.top)/r.height*100)+'%');},{passive:true}));
+  document.addEventListener('pointermove',e=>{document.documentElement.style.setProperty('--cursor-x',e.clientX+'px');document.documentElement.style.setProperty('--cursor-y',e.clientY+'px')},{passive:true});
+}
