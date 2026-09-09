@@ -27,3 +27,13 @@
   .manifesto-word{animation-duration:20s}
 }
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}.hero::before,.hero::after,.orbit-card,.orbit-core,.manifesto-word{animation:none!important}}
+
+
+/* BTYA identity mark */
+.brand{gap:11px;min-width:max-content}
+.brand-mark{width:42px;height:42px;display:block;filter:drop-shadow(0 0 16px rgba(103,247,255,.13));transition:transform .55s cubic-bezier(.2,.8,.2,1),filter .55s ease}
+.brand:hover .brand-mark{transform:rotate(-4deg) scale(1.045);filter:drop-shadow(0 0 22px rgba(103,247,255,.25))}
+.brand-type{display:flex;flex-direction:column;line-height:.9;gap:5px}
+.brand-type b{font-size:20px;letter-spacing:-.08em}
+.brand-type small{font-size:6px;letter-spacing:.14em;color:var(--muted);font-family:var(--mono)}
+@media(max-width:900px){.brand-mark{width:39px;height:39px}.brand-type b{font-size:19px}.brand-type small{font-size:5.5px}}
